@@ -1,2 +1,1 @@
-# piggybank-server
-backend for piggybank app.
+# piggy-bank
