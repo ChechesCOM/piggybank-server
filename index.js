@@ -1,7 +1,7 @@
 module.exports = function (app) {
     // grab 
-    var piggy = require('../controllers/piggy');
-    var siteRoot = require('../routes/root');
+    var piggy = require('./piggy.js');
+    var siteRoot = require('./express.js');
 
     // Site Index
     app.use('/', siteRoot);

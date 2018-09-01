@@ -1,4 +1,4 @@
-var db = require('../models/dbconnection'); 
+var db = require('./conection.js'); 
 
 //create class
 var Piggy = {
