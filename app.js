@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const router = express.Router();
 const port = process.env.PORT || 4200;
-
+const bodyParser = require('body-parser');
 
 //define a route, usually this would be a bunch of routes imported from another file
 router.get('/', function (req, res, next) {
@@ -12,6 +12,7 @@ router.get('/', function (req, res, next) {
 //add routes to express app
 routes(app);
 
+app.use(bodyParser.json());
 //start Express server on defined port
 app.listen(port);
 

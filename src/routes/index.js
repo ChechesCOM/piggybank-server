@@ -7,6 +7,6 @@ module.exports = function (app) {
     app.use('/', siteRoot);
 
     // Strains
-    app.route('/strains')
+    app.route('/piggy')
         .get(piggy.getAllItems);
 }
