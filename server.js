@@ -1,7 +1,7 @@
-var express = require('express');
-var app = express();
-var router = express.Router();
-var port = process.env.PORT || 4200;
+const express = require('express');
+const app = express();
+const router = express.Router();
+const port = process.env.PORT || 4200;
 
 
 //define a route, usually this would be a bunch of routes imported from another file
