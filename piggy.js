@@ -1,4 +1,4 @@
-var db = require('../../conection.js'); 
+var db = require('./conection.js'); 
 
 //create class
 var Piggy = {
