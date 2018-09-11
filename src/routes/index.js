@@ -6,7 +6,7 @@ module.exports = function (app) {
     // Site Index
     app.use('/', siteRoot);
 
-    // Strains
+    // piggy
     app.route('/piggy')
         .get(piggy.getAllItems);
 }
