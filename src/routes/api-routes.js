@@ -58,6 +58,20 @@ module.exports = function (app) {
         });
     });
 
+    //get all users
+    app.get("/api/users", function (req, res) {
+        db.usuarios.findAll({
+            where: {
+                id: req.params.id,
+                date: {[Op.between]: [fecha1, fecha2]}
+            },
+            group: "name",
+            order: "name"
+        }).then(function (usuarios) {
+            res.json(usuarios);
+        });
+    });
+
 
     //get user by id
     app.get("/api/users/:id", function (req, res) {
