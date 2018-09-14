@@ -4,8 +4,8 @@ module.exports = (sequelize, DataTypes) => {
     fecha: DataTypes.DATE,
     modo_pago: DataTypes.DECIMAL,
     importe: DataTypes.DECIMAL,
-    usuario_id: { type: DataTypes.INTEGER, references: { model: usuarios } },
-    gasto_id: { type: DataTypes.INTEGER, references: { model: gastos } }
+    //usuario_id: { type: DataTypes.INTEGER },
+    //gasto_id: { type: DataTypes.INTEGER }
   }, {});
   compras.associate = function (models) {
     compras.belongsTo(models.usuarios, {
@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false
       }
     });
-    compras.belongsTo(models.usuarios, {
+    compras.belongsTo(models.gastos, {
       foreignKey: {
         allowNull: false
       }
@@ -21,3 +21,4 @@ module.exports = (sequelize, DataTypes) => {
   };
   return compras;
 }; 
+

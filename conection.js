@@ -1,21 +1,15 @@
-var mysql = require('mysql');
-    port = process.env.PORT || 4205;
+var Sequelize = require("sequelize");
+port = process.env.PORT || 4205;
 
-if (port === 4205) {
+var sequelize = new Sequelize("piggydb", "root", "", {
+    host: "localhost",
+    port: 3306,
+    dialect: "mysql",
+    pool: {
+        max: 5,
+        min: 0,
+        idle: 10000
+    }
+});
 
-    var connection = mysql.createConnection({
-        host: 'localhost',
-        port: 3306,
-        user: 'root',
-        password: '',
-        database: 'piggydb',
-        
-    });
-} else {
-
-   //same as above, with live server details
-}
-
-connection.connect();
-
-module.exports = connection;
+module.exports = sequelize;

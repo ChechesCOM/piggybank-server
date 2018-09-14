@@ -6,6 +6,10 @@ module.exports = (sequelize, DataTypes) => {
     password: DataTypes.STRING
   }, {});
   usuarios.associate = function (models) {
+    usuarios.hasMany(models.gastos, {
+      onDelete: 'cascade'
+    });
+
     usuarios.hasMany(models.compras, {
       onDelete: 'cascade'
     });

@@ -1,0 +1,5 @@
+DROP DATABASE IF EXISTS piggydb;
+CREATE DATABASE piggydb;
+
+USE piggydb;
+
