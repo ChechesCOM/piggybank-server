@@ -3,3 +3,10 @@ CREATE DATABASE piggydb;
 
 USE piggydb;
 
+CREATE TABLE usuarios (
+	id INT AUTO_INCREMENT NOT NULL,
+	name VARCHAR(50) NOT NULL,
+	mail VARCHAR(50) NOT NULL,
+	password VARCHAR(50) NOT NULL,
+	PRIMARY KEY (id)
+);

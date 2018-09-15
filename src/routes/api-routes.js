@@ -52,15 +52,21 @@ module.exports = function (app) {
 
 
     //get all users
-    app.get("/api/users", function (req, res) {
+    app.get("/api/usuarios", function (req, res) {
         db.usuarios.findAll({}).then(function (usuarios) {
             res.json(usuarios);
         });
     });
 
+    app.get("/api/gastos", function (req, res) {
+        db.gastos.findAll({}).then(function (gastos) {
+            res.json(gastos);
+        });
+    });
+
     //get all users
-    app.get("/api/users", function (req, res) {
-        db.usuarios.findAll({
+    app.get("/api/users/ooooo", function (req, res) {
+        db.GASTOS.findAll({
             where: {
                 id: req.params.id,
                 date: {[Op.between]: [fecha1, fecha2]}
@@ -101,4 +107,6 @@ module.exports = function (app) {
             res.json(usuarios);
         });
     });
+
+  
 }

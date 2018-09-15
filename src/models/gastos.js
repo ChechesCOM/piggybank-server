@@ -1,8 +1,13 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const gastos = sequelize.define('gastos', {
-    nombre: DataTypes.STRING,
-    presupuesto: DataTypes.DECIMAL,
+    fecha: DataTypes.DATE,
+    categoria: DataTypes.STRING,
+    concepto: DataTypes.STRING,
+    tipo_de_pago: DataTypes.STRING,
+    monto: DataTypes.DECIMAL,
+    mensualidad: DataTypes.BOOLEAN,
+    numero_de_meses: DataTypes.INTEGER,
     //usuario_id: { type: DataTypes.INTEGER }
   }, {});
   
