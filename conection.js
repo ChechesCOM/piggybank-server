@@ -1,5 +1,5 @@
 var Sequelize = require("sequelize");
-port = process.env.PORT || 4205;
+port = process.env.PORT || 3000;
 
 var sequelize = new Sequelize("piggydb", "root", "", {
     host: "localhost",
