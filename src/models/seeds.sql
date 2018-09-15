@@ -1,3 +1,5 @@
+USE piggydb;
+
 INSERT INTO gastos (fecha,categoria,concepto,tipo_de_pago,monto,mensualidad,numero_de_meses) VALUES ('03/09/18','Apapacheo','Laser','Credito 1952','666.66','TRUE','4');
 INSERT INTO gastos (fecha,categoria,concepto,tipo_de_pago,monto,mensualidad,numero_de_meses) VALUES ('03/09/18','Mensualidad','Amazon /tablet','Credito 1952','479.12','TRUE','1');
 INSERT INTO gastos (fecha,categoria,concepto,tipo_de_pago,monto,mensualidad,numero_de_meses) VALUES ('03/09/18','Mensualidad','Amazon / laptop','Credito 1952','1543.59','TRUE','1');
@@ -45,3 +47,5 @@ INSERT INTO gastos (fecha,categoria,concepto,tipo_de_pago,monto,mensualidad,nume
 INSERT INTO gastos (fecha,categoria,concepto,tipo_de_pago,monto,mensualidad,numero_de_meses) VALUES ('12/09/18','Mascota','Petco','Credito 1942','765.2','FALSE','0');
 INSERT INTO gastos (fecha,categoria,concepto,tipo_de_pago,monto,mensualidad,numero_de_meses) VALUES ('13/09/18','Restaurante','Peace and love ','Credito 1942','120','FALSE','0');
 INSERT INTO gastos (fecha,categoria,concepto,tipo_de_pago,monto,mensualidad,numero_de_meses) VALUES ('13/09/18','Transporte','Gasolina','Credito 1942','500','FALSE','0');
+
+SELECT * FROM gastos;
