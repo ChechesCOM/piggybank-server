@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
     monto: DataTypes.DECIMAL,
     mensualidad: DataTypes.BOOLEAN,
     numero_de_meses: DataTypes.INTEGER,
-    usuario_id: { type: DataTypes.INTEGER }
+    //usuario_id: { type: DataTypes.INTEGER }
   }, {});
   
   gastos.associate = function (models) {

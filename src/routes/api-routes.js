@@ -57,7 +57,7 @@ module.exports = function (app) {
             res.json(usuarios);
         });
     });
-
+    //gastos
     app.get("/api/gastos", function (req, res) {
         db.gastos.findAll({}).then(function (gastos) {
             res.json(gastos);
@@ -65,8 +65,8 @@ module.exports = function (app) {
     });
 
     //get all users
-    app.get("/api/users/ooooo", function (req, res) {
-        db.GASTOS.findAll({
+    app.get("/api/gastos/ooo", function (req, res) {
+        db.gastos.findAll({
             where: {
                 id: req.params.id,
                 date: {[Op.between]: [fecha1, fecha2]}
@@ -75,12 +75,13 @@ module.exports = function (app) {
             order: "name"
         }).then(function (usuarios) {
             res.json(usuarios);
+            
         });
     });
 
 
     //get user by id
-    app.get("/api/users/:id", function (req, res) {
+    app.get("/api/usuarios/:id", function (req, res) {
         db.usuarios.findOne({
             where: {
                 id: req.params.id
@@ -92,7 +93,7 @@ module.exports = function (app) {
 
     //create new user
     app.post("/api/users", function (req, res) {
-        db.client.create({
+        db.usuarios.create({
             nombre: req.body.nombre,
             email: req.body.email,
             password: req.body.password
