@@ -5,11 +5,16 @@ module.exports = (sequelize, DataTypes) => {
     categoria: DataTypes.STRING,
     concepto: DataTypes.STRING,
     tipo_de_pago: DataTypes.STRING,
-    monto: DataTypes.DECIMAL,
+    monto: DataTypes.DOUBLE,
     mensualidad: DataTypes.BOOLEAN,
     numero_de_meses: DataTypes.INTEGER,
+    // createdAt: {type: DataTypes.DATEONLY, allowNull: false, defaultValue: sequelize.NOW},
+    // updatedAt: {type: DataTypes.DATEONLY, allowNull: false, defaultValue: sequelize.NOW},
     //usuario_id: { type: DataTypes.INTEGER }
-  }, {});
+  }, {
+    timestamps: true,
+    updatedAt: 'UsChangeDate'
+  });
   
   gastos.associate = function (models) {
     gastos.belongsTo(models.usuarios, {

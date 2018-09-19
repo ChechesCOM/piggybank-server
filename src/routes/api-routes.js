@@ -57,15 +57,41 @@ module.exports = function (app) {
             res.json(usuarios);
         });
     });
-    //gastos
+    //get all gastos
     app.get("/api/gastos", function (req, res) {
         db.gastos.findAll({}).then(function (gastos) {
             res.json(gastos);
         });
     });
 
-    //get all users
-    app.get("/api/gastos/ooo", function (req, res) {
+    //gastos en grafica home (suma total)
+    app.get("/api/gastos/sum",function(req, res){
+       db.gastos.sum('monto', {
+           where: {
+               usuarioId: req.params.usuarioId
+               
+           }
+       }).then(function(total){
+           console.log(total)
+            res.json(total);
+            
+       }) 
+    });
+
+
+    app.get("/api/gastos/inicio", function (req, res) {
+        db.gastos.findOne({
+            where: {
+                id: req.params.id,
+                categoria: req.params.categoria,
+            },
+        }).then(function (usuarios) {
+            res.json(usuarios); 
+        });
+    });
+
+     
+     app.get("/api/gastos", function (req, res) {
         db.gastos.findAll({
             where: {
                 id: req.params.id,
