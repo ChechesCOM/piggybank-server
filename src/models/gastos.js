@@ -1,4 +1,5 @@
 'use strict';
+
 module.exports = (sequelize, DataTypes) => {
   const gastos = sequelize.define('gastos', {
     fecha: DataTypes.DATE,
@@ -8,12 +9,12 @@ module.exports = (sequelize, DataTypes) => {
     monto: DataTypes.DOUBLE,
     mensualidad: DataTypes.BOOLEAN,
     numero_de_meses: DataTypes.INTEGER,
-    // createdAt: {type: DataTypes.DATEONLY, allowNull: false, defaultValue: sequelize.NOW},
-    // updatedAt: {type: DataTypes.DATEONLY, allowNull: false, defaultValue: sequelize.NOW},
+    createdAt: DataTypes.DATE,
+    updatedAt: {type: DataTypes.DATEONLY, allowNull: false, defaultValue: sequelize.NOW},
     //usuario_id: { type: DataTypes.INTEGER }
   }, {
     timestamps: true,
-    updatedAt: 'UsChangeDate'
+    // updatedAt: 'UsChangeDate'
   });
   
   gastos.associate = function (models) {
