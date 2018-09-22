@@ -6,7 +6,7 @@ var router = express.Router();
 var port = process.env.PORT || 8080;
 var bodyParser = require('body-parser');
 var db = require("./models");
-app.use(express.static("public"));
+  app.use(express.static("public"));
 require("./routes/api-routes")(app);
 // require("./routes/html-routes")(app);
 
