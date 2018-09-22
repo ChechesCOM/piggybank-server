@@ -10,8 +10,8 @@ module.exports = (sequelize, DataTypes) => {
     mensualidad: DataTypes.BOOLEAN,
     numero_de_meses: DataTypes.INTEGER,
     createdAt: DataTypes.DATE,
-    updatedAt: {type: DataTypes.DATEONLY, allowNull: false, defaultValue: sequelize.NOW},
-    //usuario_id: { type: DataTypes.INTEGER }
+    // updatedAt: {type: DataTypes.DATEONLY, allowNull: false, defaultValue: sequelize.NOW},
+    // usuario_id: { type: DataTypes.INTEGER }
   }, {
     timestamps: true,
     // updatedAt: 'UsChangeDate'
@@ -20,8 +20,8 @@ module.exports = (sequelize, DataTypes) => {
   gastos.associate = function (models) {
     gastos.belongsTo(models.usuarios, {
        foreignKey: {
-         allowNull: false
-       }
+          //allowNull: true
+        } 
     });
   };
   

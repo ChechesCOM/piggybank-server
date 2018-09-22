@@ -73,13 +73,14 @@ module.exports = function (app) {
 
     app.post("/api/gasto/new", function (req, res) {
         db.gastos.create({
-            fecha: req.body.fecha,
+            fecha: req.params.fecha,
             categoria: req.params.categoria,
             concepto: req.params.concepto,
             tipo_de_pago: req.params.tipo_de_pago,
             monto:  req.params.monto,
             mensualidad: req.params.mensualidades,
-            numero_de_meses: req.params.numero_de_meses
+            numero_de_meses: req.params.numero_de_meses,
+            usuarioId: req.params.usuarioId
         }).then(function (gastoNuevo) {
             res.json(gastoNuevo);
         });
