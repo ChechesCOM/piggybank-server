@@ -2,40 +2,7 @@ var db = require("../models");
 
 module.exports = function (app) {
 
-    //GET all movements
-    // app.get("/api/movements", function (req, res) {
-    //     db.compras.findAll({}).then(function (movements) {
-    //         res.json(movements);
-    //     });
-    // });
-
-    // //GET movements filtered by name 
-    // app.get("/api/movements/:id", function (req, res) {
-    //     db.compras.findOne({
-    //         where: {
-    //             id: req.params.id
-    //         }
-    //     }).then(function (movement) {
-    //         res.json(movement);
-    //     });
-    // });
-
-    // //Create new movement
-    // app.post("/api/movements", function (req, res) {
-    //     db.compras.create({
-
-    //     }).then(function (newMovement) {
-    //         res.json(newMovement);
-    //     });
-    // });
-
-    // // Delete a movement
-    // app.delete("/api/Movements/:id", function (req, res) {
-    //     db.compras.destroy({ where: { id: req.params.id } }).then(function (movements) {
-    //         res.json(movements);
-    //     });
-    // });
-
+   
     //get all gastos
     app.get("/api/gastos", function (req, res) {
         db.gastos.findAll({}).then(function (gastos) {
