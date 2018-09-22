@@ -12,15 +12,16 @@ require("./routes/html-routes")(app);
 
 //define a route, usually this would be a bunch of routes imported from another file
 
-//app.set('view engine', 'html');
 //midleware
+
+//app.set('view engine', 'html');
 //router.get(app);
 //app.use("/api", router);
 //app.use(bodyParser.urlencoded({ extended: false }));
 //app.use(bodyParser.json());
 
-//start Express server on defined port
 
+//start Express server on defined port
 
 
 //log to console to let us know it's working

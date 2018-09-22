@@ -2,79 +2,39 @@ var db = require("../models");
 
 module.exports = function (app) {
 
-    // Rutas
-
-    // Perfil
-
-    // // GET - /api/config/perfil
-    // app.get("/api/config/perfil", function (req, res) { },
-    //     // POST - /api/config/perfil
-    //     app.get("/api/config/perfil", function (req, res) { },
-    //         // UPDATE - /api/config/perfil
-    //         app.get("/api/config/perfil", function (req, res) { }
-    // // DELETE - /api/config/perfil
-
-    // Movimientos
-
-    // GET - /api/movimientos
-    // POST - /api/movimientos
-    // UPDATE - /api/movimientos/:id
-    // DELETE - /api/movimientos/:id
-
-    // Home
-
-    // GET - /api/total/:params Regresa la suma de los gastos totales y el presupuesto total. Toma como parametro semana/mes/año.
-    // GET - /api/totalcategoria/:params Regresa la suma de los gastos por categoria y el presupuesto total. Toma como parametro semana/mes/año
-
-    // Diario
-
-    // GET - /api/diario/:params Regresa todos los movimientos en el periodo de tiempo seleccionado
-    // Duda: Mejor trabajarlos en el backend o en el frontend
-
-
-    // {
-    //                 movimiento1 = {
-    //                     monto: "",
-    //                     concepto: "",
-    //                     fecha: "",
-    //                     Lugar/Marca: "",
-    //         Categoria: "",
-    //                     TipoDePago: "",
-    //                     Meses/Contado
-    //                 },
     //GET all movements
-    app.get("/api/movements", function (req, res) {
-        db.compras.findAll({}).then(function (movements) {
-            res.json(movements);
-        });
-    });
+    // app.get("/api/movements", function (req, res) {
+    //     db.compras.findAll({}).then(function (movements) {
+    //         res.json(movements);
+    //     });
+    // });
 
-    //GET movements filtered by name 
-    app.get("/api/movements/:id", function (req, res) {
-        db.compras.findOne({
-            where: {
-                id: req.params.id
-            }
-        }).then(function (movement) {
-            res.json(movement);
-        });
-    });
+    // //GET movements filtered by name 
+    // app.get("/api/movements/:id", function (req, res) {
+    //     db.compras.findOne({
+    //         where: {
+    //             id: req.params.id
+    //         }
+    //     }).then(function (movement) {
+    //         res.json(movement);
+    //     });
+    // });
 
-    //Create new movement
-    app.post("/api/movements", function (req, res) {
-        db.compras.create({
+    // //Create new movement
+    // app.post("/api/movements", function (req, res) {
+    //     db.compras.create({
 
-        }).then(function (newMovement) {
-            res.json(newMovement);
-        });
-    });
+    //     }).then(function (newMovement) {
+    //         res.json(newMovement);
+    //     });
+    // });
 
-    // Delete a movement
-    app.delete("/api/Movements/:id", function (req, res) {
-        db.compras.destroy({ where: { id: req.params.id } }).then(function (movements) {
-            res.json(movements);
-        });
-    });
+    // // Delete a movement
+    // app.delete("/api/Movements/:id", function (req, res) {
+    //     db.compras.destroy({ where: { id: req.params.id } }).then(function (movements) {
+    //         res.json(movements);
+    //     });
+    // });
 
     //get all gastos
     app.get("/api/gastos", function (req, res) {
@@ -89,6 +49,18 @@ module.exports = function (app) {
             where: {
                 usuarioId: req.params.usuarioId
             }
+        }).then(function (total) {
+            console.log(total)
+            res.json(total);
+        })
+    });
+
+    app.get("/api/gastos/diary/:usuarioId", function (req, res) {
+        db.gastos.findAll({
+                usuarioId: req.params.usuarioId,
+                attributes: ['fecha', [db.sequelize.fn('SUM', db.sequelize.col('monto')), 'total']],
+                group: ['fecha']
+        
         }).then(function (total) {
             console.log(total)
             res.json(total);
