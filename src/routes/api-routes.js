@@ -73,15 +73,15 @@ module.exports = function (app) {
 
     app.post("/api/gasto/new", function (req, res) {
         db.gastos.create({
-            fecha: req.params.fecha,
+            fecha: req.body.fecha,
             categoria: req.params.categoria,
             concepto: req.params.concepto,
             tipo_de_pago: req.params.tipo_de_pago,
             monto:  req.params.monto,
             mensualidad: req.params.mensualidades,
             numero_de_meses: req.params.numero_de_meses
-        }).then(function (usuario) {
-            res.json(usuario);
+        }).then(function (gastoNuevo) {
+            res.json(gastoNuevo);
         });
     });
 
@@ -107,9 +107,9 @@ module.exports = function (app) {
     //create new user
     app.post("/api/users", function (req, res) {
         db.usuarios.create({
-            nombre: req.body.nombre,
-            email: req.body.email,
-            password: req.body.password
+            nombre: req.params.nombre,
+            email: req.params.email,
+            password: req.params.password
         }).then(function (usuario) {
             res.json(usuario);
         });
