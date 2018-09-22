@@ -1,13 +1,16 @@
 {
-  "main.css": "static/css/main.acab9e2e.css",
-  "main.css.map": "static/css/main.acab9e2e.css.map",
-  "main.js": "static/js/main.76b58c4f.js",
-  "main.js.map": "static/js/main.76b58c4f.js.map",
-  "static\\media\\add-btn.svg": "static/media/add-btn.0899adb0.svg",
-  "static\\media\\budget-btn.svg": "static/media/budget-btn.e6bc6663.svg",
-  "static\\media\\diary-btn.svg": "static/media/diary-btn.c8aa151e.svg",
-  "static\\media\\home-btn.svg": "static/media/home-btn.4f3a96cb.svg",
-  "static\\media\\pigu-green.svg": "static/media/pigu-green.a4d1adc3.svg",
+  "main.css": "static/css/main.839383ce.css",
+  "main.css.map": "static/css/main.839383ce.css.map",
+  "main.js": "static/js/main.4e402846.js",
+  "main.js.map": "static/js/main.4e402846.js.map",
+  "static\\media\\add-btn.svg": "static/media/add-btn.5721bbbe.svg",
+  "static\\media\\budget-btn.svg": "static/media/budget-btn.2e55f71c.svg",
+  "static\\media\\createNew.svg": "static/media/createNew.821c41e3.svg",
+  "static\\media\\diary-btn.svg": "static/media/diary-btn.740f922a.svg",
+  "static\\media\\foto.png": "static/media/foto.9396fca3.png",
+  "static\\media\\home-btn.svg": "static/media/home-btn.4e92ecd9.svg",
+  "static\\media\\pigu-green.svg": "static/media/pigu-green.a167c906.svg",
   "static\\media\\pigu-pink-01.svg": "static/media/pigu-pink-01.be550305.svg",
-  "static\\media\\settings-btn.svg": "static/media/settings-btn.a617a10a.svg"
+  "static\\media\\piguBlue.svg": "static/media/piguBlue.b5eda777.svg",
+  "static\\media\\settings-btn.svg": "static/media/settings-btn.d0954639.svg"
 }
