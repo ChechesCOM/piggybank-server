@@ -2,7 +2,7 @@ var db = require("../models");
 
 module.exports = function (app) {
 
-   
+
     //get all gastos
     app.get("/api/gastos", function (req, res) {
         db.gastos.findAll({}).then(function (gastos) {
@@ -24,10 +24,10 @@ module.exports = function (app) {
 
     app.get("/api/gastos/diary/:usuarioId", function (req, res) {
         db.gastos.findAll({
-                usuarioId: req.params.usuarioId,
-                attributes: ['fecha', [db.sequelize.fn('SUM', db.sequelize.col('monto')), 'total']],
-                group: ['fecha']
-        
+            usuarioId: req.params.usuarioId,
+            attributes: ['fecha', [db.sequelize.fn('SUM', db.sequelize.col('monto')), 'total']],
+            group: ['fecha']
+
         }).then(function (total) {
             console.log(total)
             res.json(total);
@@ -68,6 +68,20 @@ module.exports = function (app) {
         }).then(function (usuarios) {
             res.json(usuarios);
 
+        });
+    });
+
+    app.post("/api/gasto/new", function (req, res) {
+        db.gastos.create({
+            fecha: req.params.fecha,
+            categoria: req.params.categoria,
+            concepto: req.params.concepto,
+            tipo_de_pago: req.params.tipo_de_pago,
+            monto:  req.params.monto,
+            mensualidad: req.params.mensualidades,
+            numero_de_meses: req.params.numero_de_meses
+        }).then(function (usuario) {
+            res.json(usuario);
         });
     });
 
