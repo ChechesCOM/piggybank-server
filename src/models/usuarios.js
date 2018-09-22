@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
     createdAt: DataTypes.DATEONLY
   }, {
     timestamps: true,
-    updatedAt: 'UsChangeDate'
+    updatedAt: DataTypes.DATEONLY
   });
   usuarios.associate = function (models) {
     usuarios.hasMany(models.gastos, {
