@@ -1,4 +1,4 @@
-{
+var config = {
   "development": {
     "username": "root",
     "password": "root",
@@ -21,3 +21,4 @@
     "dialect": "mysql"
   }
 }
+export default config;

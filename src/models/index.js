@@ -5,7 +5,13 @@ const path = require('path');
 const Sequelize = require('sequelize');
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
-const config = require('../config/config.json')[env];
+const config = {
+    "username": "b17cc0ec6abeea",
+    "password": "a0d41a06",
+    "database": "heroku_7a9e3aa2ee001ce",
+    "host": "us-cdbr-iron-east-01.cleardb.net",
+    "dialect": "mysql"
+  };
 const db = {};
 
 let sequelize;
