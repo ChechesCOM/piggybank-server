@@ -28,9 +28,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.DATE
     },
     updatedAt: {
-      type: DataTypes.DATEONLY,
-      allowNull: false, 
-      defaultValue: sequelize.NOW
+      type: DataTypes.DATE,
     },
     //usuario_id: { type: DataTypes.INTEGER }
   }, {
