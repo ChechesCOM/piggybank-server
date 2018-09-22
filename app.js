@@ -12,8 +12,9 @@ require("./src/routes/html-routes")(app);
 
 //define a route, usually this would be a bunch of routes imported from another file
 
-//app.set('view engine', 'html');
 //midleware
+
+//app.set('view engine', 'html');
 //router.get(app);
 //app.use("/api", router);
 //app.use(bodyParser.urlencoded({ extended: false }));
