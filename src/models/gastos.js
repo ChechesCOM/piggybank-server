@@ -2,28 +2,49 @@
 
 module.exports = (sequelize, DataTypes) => {
   const gastos = sequelize.define('gastos', {
-    fecha: DataTypes.DATE,
-    categoria: DataTypes.STRING,
-    concepto: DataTypes.STRING,
-    tipo_de_pago: DataTypes.STRING,
-    monto: DataTypes.DOUBLE,
-    mensualidad: DataTypes.BOOLEAN,
-    numero_de_meses: DataTypes.INTEGER,
-    createdAt: DataTypes.DATE,
-    // updatedAt: {type: DataTypes.DATEONLY, allowNull: false, defaultValue: sequelize.NOW},
-    // usuario_id: { type: DataTypes.INTEGER }
+    fecha: {
+      type: DataTypes.DATEONLY,
+      allowNull: false
+    },
+    categoria: {
+      type: DataTypes.STRING
+    },
+    concepto: {
+      type:DataTypes.STRING
+    },
+    tipo_de_pago: {
+      type: DataTypes.STRING
+    },
+    monto: {
+      type: DataTypes.DOUBLE
+    },
+    mensualidad: {
+      type: DataTypes.BOOLEAN
+    },
+    numero_de_meses: {
+      type: DataTypes.INTEGER
+    },
+    createdAt: {
+      type: DataTypes.DATE
+    },
+    updatedAt: {
+      type: DataTypes.DATEONLY,
+      allowNull: false, 
+      defaultValue: sequelize.NOW
+    },
+    //usuario_id: { type: DataTypes.INTEGER }
   }, {
     timestamps: true,
     // updatedAt: 'UsChangeDate'
   });
   
-  gastos.associate = function (models) {
-    gastos.belongsTo(models.usuarios, {
-       foreignKey: {
-          //allowNull: true
-        } 
-    });
-  };
+  // gastos.associate = function (models) {
+  //   gastos.belongsTo(models.usuarios, {
+  //      foreignKey: {
+  //        allowNull: false
+  //      }
+  //   });
+  // };
   
   return gastos;
 };
