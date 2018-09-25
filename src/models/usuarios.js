@@ -6,6 +6,7 @@ module.exports = (sequelize, DataTypes) => {
     password: DataTypes.STRING,
     createdAt: DataTypes.DATEONLY,
     
+    
   }, {
     timestamps: true,
     updatedAt: 'UsChangeDate'

@@ -32,6 +32,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false, 
       defaultValue: sequelize.NOW
     },
+    
     //usuario_id: { type: DataTypes.INTEGER }
   }, {
     timestamps: true,
