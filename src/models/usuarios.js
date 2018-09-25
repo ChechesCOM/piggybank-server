@@ -4,13 +4,11 @@ module.exports = (sequelize, DataTypes) => {
     nombre: DataTypes.STRING,
     email: DataTypes.STRING,
     password: DataTypes.STRING,
-    createdAt: DataTypes.DATEONLY,
-    
-    
+    createdAt: DataTypes.DATEONLY
   }, {
-    timestamps: true,
-    updatedAt: DataTypes.DATEONLY
-  });
+      timestamps: true,
+      //updatedAt: DataTypes.DATEONLY
+    });
   usuarios.associate = function (models) {
     usuarios.hasMany(models.gastos, {
       onDelete: 'cascade'
