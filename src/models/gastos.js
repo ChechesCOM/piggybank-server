@@ -3,7 +3,7 @@
 module.exports = (sequelize, DataTypes) => {
   const gastos = sequelize.define('gastos', {
     fecha: {
-      type: DataTypes.DATE,
+      type: DataTypes.DATEONLY,
       allowNull: false
     },
     categoria: {
@@ -37,13 +37,13 @@ module.exports = (sequelize, DataTypes) => {
     // updatedAt: 'UsChangeDate'
   });
   
-  // gastos.associate = function (models) {
-  //   gastos.belongsTo(models.usuarios, {
-  //      foreignKey: {
-  //        allowNull: false
-  //      }
-  //   });
-  // };
+  gastos.associate = function (models) {
+    gastos.belongsTo(models.usuarios, {
+       foreignKey: {
+         allowNull: false
+       }
+    });
+  };
   
   return gastos;
 };
