@@ -72,17 +72,17 @@ module.exports = function (app) {
     });
 
     app.post("/api/gasto/new", function (req, res) {
-        db.gastos.create({
+            db.gastos.create({
             fecha: req.body.fecha,
             categoria: req.body.categoria,
             concepto: req.body.concepto,
             tipo_de_pago: req.body.tipo_de_pago,
-            monto:  req.body.monto,
+            monto: req.body.monto,
             mensualidad: req.body.mensualidades,
             numero_de_meses: req.body.numero_de_meses,
             usuarioId: req.body.usuarioId
-        }).then(function (gastoNuevo) {
-            res.json(gastoNuevo);
+        }).then(function (gastos) {
+            res.json(gastos);
         });
     });
 

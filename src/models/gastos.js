@@ -3,7 +3,7 @@
 module.exports = (sequelize, DataTypes) => {
   const gastos = sequelize.define('gastos', {
     fecha: {
-      type: DataTypes.DATEONLY,
+      type: DataTypes.DATE,
       allowNull: false
     },
     categoria: {
@@ -30,6 +30,7 @@ module.exports = (sequelize, DataTypes) => {
     updatedAt: {
       type: DataTypes.DATE,
     },
+    
     //usuario_id: { type: DataTypes.INTEGER }
   }, {
     timestamps: true,
