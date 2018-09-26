@@ -106,7 +106,7 @@ module.exports = function (app) {
     });
 
     //create new user
-    app.post("/api/users", function (req, res) {
+    app.post("/api/usuarios", function (req, res) {
         db.usuarios.create({
             nombre: req.params.nombre,
             email: req.params.email,
@@ -117,7 +117,7 @@ module.exports = function (app) {
     });
 
     //update user
-    app.put("/api/users/:id", function (req, res) {
+    app.put("/api/usuarios/:id", function (req, res) {
         db.usuarios.create(req.body).then(function (usuarios) {
             res.json(usuarios);
         });
