@@ -4,14 +4,14 @@ module.exports = function (app) {
 
 
     //get all gastos
-    app.get("/api/gastos", function (req, res) {
+    app.get("/api/expenses", function (req, res) {
         db.gastos.findAll({}).then(function (gastos) {
             res.json(gastos);
         });
     });
 
     //gastos (suma total)
-    app.get("/api/gastos/homesum/:usuarioId", function (req, res) {
+    app.get("/api/homesum/:usuarioId", function (req, res) {
         db.gastos.sum('monto', {
             where: {
                 usuarioId: req.params.usuarioId
@@ -22,7 +22,7 @@ module.exports = function (app) {
         })
     });
 
-    app.get("/api/gastos/diary/:usuarioId", function (req, res) {
+    app.get("/api/diary/:usuarioId", function (req, res) {
         db.gastos.findAll({
             usuarioId: req.params.usuarioId,
             attributes: ['fecha', [db.sequelize.fn('SUM', db.sequelize.col('monto')), 'total']],
@@ -34,7 +34,7 @@ module.exports = function (app) {
         })
     });
 
-    app.get("/api/gastos/group/:usuarioId", function (req, res) {
+    app.get("/api/categorytotal/:usuarioId", function (req, res) {
         db.gastos.findAll({
             attributes: ['categoria', [db.sequelize.fn('SUM', db.sequelize.col('monto')), 'total']],
             group: ['categoria']
@@ -45,7 +45,7 @@ module.exports = function (app) {
     });
 
 
-    app.get("/api/gastos/inicio", function (req, res) {
+    app.get("/api/expense/", function (req, res) {
         db.gastos.findOne({
             where: {
                 id: req.params.id,
@@ -57,7 +57,7 @@ module.exports = function (app) {
     });
 
 
-    app.get("/api/gastos", function (req, res) {
+    app.get("/api/allexpenses", function (req, res) {
         db.gastos.findAll({
             where: {
                 id: req.params.id,
@@ -71,7 +71,7 @@ module.exports = function (app) {
         });
     });
 
-    app.post("/api/gastos/new", function (req, res) {
+    app.post("/api/newexpense", function (req, res) {
             db.gastos.create({
             fecha: req.body.fecha,
             categoria: req.body.categoria,
@@ -89,13 +89,13 @@ module.exports = function (app) {
     // USERS //
 
     //get all users
-    app.get("/api/usuarios", function (req, res) {
+    app.get("/api/users", function (req, res) {
         db.usuarios.findAll({}).then(function (usuarios) {
             res.json(usuarios);
         });
     });
     //get user by id
-    app.get("/api/usuarios/:id", function (req, res) {
+    app.get("/api/users/:id", function (req, res) {
         db.usuarios.findOne({
             where: {
                 id: req.params.id
@@ -106,7 +106,7 @@ module.exports = function (app) {
     });
 
     //create new user
-    app.post("/api/usuarios", function (req, res) {
+    app.post("/api/newuser", function (req, res) {
         db.usuarios.create({
             nombre: req.params.nombre,
             email: req.params.email,
@@ -117,7 +117,7 @@ module.exports = function (app) {
     });
 
     //update user
-    app.put("/api/usuarios/:id", function (req, res) {
+    app.put("/api/update/:id", function (req, res) {
         db.usuarios.create(req.body).then(function (usuarios) {
             res.json(usuarios);
         });
